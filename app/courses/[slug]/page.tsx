@@ -82,8 +82,8 @@ const page = () => {
       </section>
 
       {/* overview Section */}
-      <section id="overview" className="py-12 bg-white ">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
+      <section id="overview" className="py-18 bg-[#f7faf7] ">
+        <div className="relative bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
           {/* Overview Heading */}
           <p className="text-base font-bold tracking-wide text-white mb-8 absolute left-0 top-0 bg-transparent  bg-gradient-to-r from-apex-green to-apex-blue-light rounded-tl-lg p-3.5">
             Overview
@@ -143,6 +143,84 @@ const page = () => {
                 industry relevant examples.
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Training Options Section */}
+
+      <section id="training" className="py-14  bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          {/* Section Heading */}
+          <h2 className="text-2xl text-center md:text-3xl font-bold text-gray-900 mb-8">
+            <span className="text-apex-blue-light ">Training </span>Options
+          </h2>
+
+          {/* Inner Section with Columns */}
+          <div className="grid pt-4 grid-cols-1 md:grid-cols-2 gap-12 md:mx-[12%]">
+            {/* First Column: Virtual Instructor-Led Training */}
+            <div className="space-y-6 border-4 rounded-lg border-solid border-apex-green shadow-xl p-[35px_25px_85px_25px]">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center">
+                Virtual Instructor-Led
+                <br />
+                Training
+              </h3>
+              <div className="border-t border-gray-300 w-full"></div>
+              <ul className="list-disc pl-5 space-y-2 text-base text-gray-700">
+                <li className="li-highlight">Self-Paced Learning</li>
+                <li className="li-highlight">
+                  Live, online classroom training by top instructors and
+                  practitioners
+                </li>
+                <li className="li-highlight">
+                  Lifetime access to high-quality self-paced elearning content
+                  curated by industry experts
+                </li>
+                <li className="li-highlight">
+                  24×7 learner assistance and support
+                </li>
+              </ul>
+
+              <div className="w-full bg-apex-blue-light px-4 py-3 text-center text-white font-semibold rounded-md hover:bg-apex-blue-dark transition-colors duration-300 mt-auto">
+                <Link href="#talkLa" className="w-full block text-xl font-bold">
+                  Enroll Now
+                </Link>
+              </div>
+            </div>
+
+            {/* Second Column: Corporate Training */}
+            <div className="space-y-6 border-4 rounded-lg border-solid border-apex-green shadow-xl p-[35px_25px_85px_25px]">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center">
+                CORPORATE
+                <br />
+                TRAINING
+              </h3>
+              <div className="border-t border-gray-300 w-full"></div>
+              <ul className="list-disc pl-5 space-y-2 text-base text-gray-700">
+                <li className="li-highlight">
+                  Customized learning delivery model (self-paced and/or
+                  instructor-led)
+                </li>
+                <li className="li-highlight">Flexible pricing options</li>
+                <li className="li-highlight">
+                  Enterprise-grade learning management system (LMS)
+                </li>
+                <li className="li-highlight">
+                  Enterprise dashboards for individuals and teams
+                </li>
+                <li className="li-highlight">
+                  24×7 learner assistance and support
+                </li>
+              </ul>
+              <p className="text-base font-bold text-gray-900">
+                Contact us right away and get a quote!
+              </p>
+              <div className="w-full bg-apex-blue-light px-4 py-3 text-center text-white font-semibold rounded-md hover:bg-apex-blue-dark transition-colors duration-300 mt-auto">
+                <Link href="#talkLa" className="w-full block text-xl font-bold">
+                  Contact us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
