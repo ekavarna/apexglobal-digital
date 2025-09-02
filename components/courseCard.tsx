@@ -73,7 +73,7 @@ const CourseCard = ({
         <p className="text-apex-text mb-6 flex-grow">{description}</p>
 
         {/* Button */}
-        <div className="w-full bg-apex-blue-light px-4 py-4 text-center text-white font-semibold rounded-md hover:bg-apex-blue-dark transition-colors duration-300 mt-auto">
+        <div className="w-full global-button rounded-md text-center mt-auto">
           <Link href={link} className="w-full block text-xl font-bold">
             Read More
           </Link>

@@ -78,7 +78,7 @@ const page = () => {
 
             <Link
               href="/courses"
-              className="mt-4 text-lg inline-block bg-apex-blue-dark uppercase tracking-wide text-white hover:text-white hover:bg-transparent  border-2 border-apex-blue-dark px-8 py-2  rounded-md transition-colors"
+              className="mt-4 text-lg inline-block global-button rounded-md"
             >
               Enroll Now
             </Link>
@@ -192,7 +192,7 @@ const page = () => {
                 </li>
               </ul>
 
-              <div className="w-full bg-apex-blue-light px-4 py-3 text-center text-white font-semibold rounded-md hover:bg-apex-blue-dark transition-colors duration-300 mt-auto">
+              <div className="w-full global-button rounded-md text-center">
                 <Link href="#talkLa" className="w-full block text-xl font-bold">
                   Enroll Now
                 </Link>
@@ -226,7 +226,7 @@ const page = () => {
               <p className="text-base font-bold text-gray-900">
                 Contact us right away and get a quote!
               </p>
-              <div className="w-full bg-apex-blue-light px-4 py-3 text-center text-white font-semibold rounded-md hover:bg-apex-blue-dark transition-colors duration-300 mt-auto">
+              <div className="w-full global-button rounded-md text-center">
                 <Link href="#talkLa" className="w-full block text-xl font-bold">
                   Contact us
                 </Link>

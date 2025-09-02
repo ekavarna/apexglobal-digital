@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
           />
 
           <div className="relative group">
-            <button className="flex items-center space-x-2 hover:text-gray-300 transition-colors">
+            <button className="flex items-center bg-apex-blue-light p-3 rounded-lg text-white space-x-2 hover:text-gray-300 transition-colors">
               <span>Courses</span>
               <svg
                 width="15"
@@ -73,7 +73,7 @@ const Nav: React.FC = () => {
             href="https://www.apexgloballearning.com/contact-us/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-apex-blue-light hover:bg-white text-white hover:text-apex-blue-dark border-2 border-apex-blue-light px-4 py-2 rounded-md transition-colors"
+            className="bg-transparent hover:bg-apex-blue-light text-apex-blue-light hover:text-white border-2 border-apex-blue-light px-4 py-2 rounded-md transition-colors"
           >
             Contact Us
           </a>
