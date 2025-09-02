@@ -87,7 +87,7 @@ const page = () => {
       </section>
 
       <section className=" mx-auto px-4 py-4 sticky top-20 bg-white z-10 shadow-lg">
-        <div className="container mx-auto py-4">
+        <div className="container text-center mx-auto py-4">
           <CourseNav />
         </div>
       </section>
@@ -160,16 +160,16 @@ const page = () => {
 
       {/* Training Options Section */}
 
-      <section id="training" className="py-14  bg-white">
+      {/* <section id="training" className="py-14  bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          {/* Section Heading */}
+         
           <h2 className="text-2xl text-center md:text-3xl font-bold text-gray-900 mb-8">
             <span className="text-apex-blue-light ">Training </span>Options
           </h2>
 
-          {/* Inner Section with Columns */}
+          
           <div className="grid pt-4 grid-cols-1 md:grid-cols-2 gap-12 md:mx-[12%]">
-            {/* First Column: Virtual Instructor-Led Training */}
+            
             <div className="space-y-6 border-4 rounded-lg border-solid border-apex-green shadow-xl p-[35px_25px_85px_25px]">
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center">
                 Virtual Instructor-Led
@@ -199,7 +199,7 @@ const page = () => {
               </div>
             </div>
 
-            {/* Second Column: Corporate Training */}
+        
             <div className="space-y-6 border-4 rounded-lg border-solid border-apex-green shadow-xl p-[35px_25px_85px_25px]">
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center">
                 CORPORATE
@@ -234,7 +234,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>  */}
 
       {/* Pre-requisites Section */}
       <section id="pre-requisites" className="py-18 bg-[#f7faf7] ">
@@ -269,12 +269,12 @@ const page = () => {
 
       {/* Curriculum */}
 
-      <section id="curriculum" className="py-12 bg-[#f7faf7]">
+      {/* <section id="curriculum" className="py-12 bg-[#f7faf7]">
         <div className="relative max-w-7xl mx-auto   py-5">
           <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-14">
-            {/* Curriculum Column */}
+     
             <div className="space-y-6 relative bg-white   px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
-              {/* Curriculum Heading */}
+            
               <p className="text-base font-bold tracking-wide text-white mb-8 absolute left-0 top-0 bg-transparent  bg-gradient-to-r from-apex-green to-apex-blue-light rounded-tl-lg p-3.5">
                 Curriculum
               </p>
@@ -298,7 +298,7 @@ const page = () => {
               </div>
             </div>
 
-            {/* Form Column */}
+       
             <div className="space-y-6 relative bg-white   px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
               <h2 className="text-2xl font-bold text-gray-900 text-center">
                 Talk to a Learning
@@ -401,7 +401,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
