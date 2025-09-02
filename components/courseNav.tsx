@@ -6,9 +6,9 @@ const navItems = [
   { href: "#training", label: "Training Options" },
   { href: "#pre-requisites", label: "Pre-requisites" },
   { href: "#curriculum", label: "Curriculum" },
-  { href: "#attend", label: "Who should attend" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#faq", label: "FAQs" },
+  //   { href: "#attend", label: "Who should attend" },
+  //   { href: "#reviews", label: "Reviews" },
+  //   { href: "#faq", label: "FAQs" },
 ];
 
 const courseNav: FC = () => {

@@ -9,7 +9,7 @@ const cardData = [
     enrolledUser: "22",
     description:
       "Whether you’re a sustainability officer, a compliance manager, or a business leader, this webinar will provide you with the tools, insights, and strategies necessary to take tangible steps toward net-zero today.",
-    link: "https://www.apexgloballearning.com/xposiums/low-carbon-strategies-for-achieving-net-zero-targets/",
+    link: "/courses/low-carbon-strategies-for-achieving-net-zero-targets/",
   },
   {
     imageSrc: "/Low-Carbon-Xposium-page-thumbnail.png",
@@ -18,7 +18,7 @@ const cardData = [
     enrolledUser: "10",
     description:
       "Learn how to integrate sustainable practices into your supply chain to reduce environmental impact and improve efficiency.",
-    link: "https://www.apexgloballearning.com/xposiums/sustainable-supply-chain/",
+    link: "/courses/sustainable-supply-chain/",
   },
   {
     imageSrc: "/Low-Carbon-Xposium-page-thumbnail.png",
@@ -27,7 +27,7 @@ const cardData = [
     enrolledUser: "15",
     description:
       "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
-    link: "https://www.apexgloballearning.com/xposiums/renewable-energy-sources/",
+    link: "/courses/renewable-energy-sources/",
   },
 ];
 

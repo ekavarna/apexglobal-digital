@@ -40,6 +40,17 @@ const courseData = {
   courseSubtitle: "Course Subtitle",
 };
 
+const curriculumItems = [
+  "2000.1 Leadership & Governance",
+  "2000.2 Planning & Program Management",
+  "2000.3 The Business Impact Analysis",
+  "2000.4 The Risk Assessment",
+  "2000.5 Determining & Documenting the Strategy",
+  "2000.6 Implementing the Procedures",
+  "2000.7 Checking the Procedures",
+  "2000.8 Performance Evaluation",
+];
+
 const page = () => {
   return (
     <div>
@@ -220,6 +231,173 @@ const page = () => {
                   Contact us
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pre-requisites Section */}
+      <section id="pre-requisites" className="py-18 bg-[#f7faf7] ">
+        <div className="relative bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
+          {/* Pre-requisites Heading */}
+          <p className="text-base font-bold tracking-wide text-white mb-8 absolute left-0 top-0 bg-transparent  bg-gradient-to-r from-apex-green to-apex-blue-light rounded-tl-lg p-3.5">
+            Pre-requisites
+          </p>
+
+          {/* Inner Section with Columns */}
+          <div className="grid grid-cols-1  gap-12 pt-18">
+            {/* First Column: Text Content */}
+            <div className="space-y-6 ">
+              <h2 className="text-2xl md:text-3xl font-normal leading-snug text-gray-900">
+                Pre-requisites for BCM Lead Implementer
+              </h2>
+              <p className="text-base text-gray-700">For Virtual Training:</p>
+
+              <ul className="list-disc pl-5 space-y-4 text-base text-gray-700">
+                <li className="li-highlight">
+                  Computer/ Laptop with Microphone & Camera in working condition
+                </li>
+                <li className="li-highlight">Good Internet</li>
+                <li className="li-highlight">
+                  Access to Google Forms / MS Forms for Assessments
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Curriculum */}
+
+      <section id="curriculum" className="py-12 bg-[#f7faf7]">
+        <div className="relative max-w-7xl mx-auto   py-5">
+          <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-14">
+            {/* Curriculum Column */}
+            <div className="space-y-6 relative bg-white   px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
+              {/* Curriculum Heading */}
+              <p className="text-base font-bold tracking-wide text-white mb-8 absolute left-0 top-0 bg-transparent  bg-gradient-to-r from-apex-green to-apex-blue-light rounded-tl-lg p-3.5">
+                Curriculum
+              </p>
+
+              <h2 className="text-2xl md:text-3xl pt-16 font-bold text-gray-900">
+                BCM Lead Implementer Course Curriculum
+              </h2>
+              <div className="space-y-4">
+                {curriculumItems.map((item, index) => (
+                  <div key={index}>
+                    <h5 className="text-lg font-semibold text-gray-900">
+                      {item}
+                    </h5>
+                    <ul className="list-none pl-5">
+                      <li className="li-highlight text-base text-gray-700">
+                        {item}
+                      </li>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Form Column */}
+            <div className="space-y-6 relative bg-white   px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-5">
+              <h2 className="text-2xl font-bold text-gray-900 text-center">
+                Talk to a Learning
+                <br />
+                Advisor
+              </h2>
+              <form
+                className="space-y-4"
+                id="talkLearningAdvisor"
+                name="Talk to a Learning Advisor"
+                aria-label="Talk to a Learning Advisor"
+              >
+                <input type="hidden" name="post_id" value="2311" />
+                <input type="hidden" name="form_id" value="4161447" />
+                <input
+                  type="hidden"
+                  name="referer_title"
+                  value="BCM Lead Implementer - APEX Global"
+                />
+                <input type="hidden" name="queried_id" value="3132" />
+                <input
+                  type="hidden"
+                  name="form_fields[course]"
+                  value="BCM Lead Implementer"
+                />
+
+                <div className="flex flex-col">
+                  <label htmlFor="form-field-name" className="sr-only">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="form_fields[name]"
+                    id="form-field-name"
+                    className="border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="form-field-email" className="sr-only">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="form_fields[email]"
+                    id="form-field-email"
+                    className="border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="form-field-phone" className="sr-only">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="form_fields[phone]"
+                    id="form-field-phone"
+                    className="border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Phone Number"
+                    required
+                    pattern="[0-9()#&+*-=.]+"
+                    title="Only numbers and phone characters (#, -, *, etc) are accepted."
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <p className="text-base text-gray-700">Inquiry For:</p>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-1">
+                      <input
+                        type="radio"
+                        name="form_fields[field_2958ecb]"
+                        value="Myself"
+                        id="form-field-field_2958ecb-0"
+                        className="text-blue-500 focus:ring-blue-500"
+                      />
+                      Myself
+                    </label>
+                    <label className="flex items-center gap-1">
+                      <input
+                        type="radio"
+                        name="form_fields[field_2958ecb]"
+                        value="My Company"
+                        id="form-field-field_2958ecb-1"
+                        className="text-blue-500 focus:ring-blue-500"
+                      />
+                      My Company
+                    </label>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white font-semibold text-sm py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
+                >
+                  REQUEST INFO
+                </button>
+              </form>
             </div>
           </div>
         </div>
