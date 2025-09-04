@@ -93,7 +93,7 @@ const Page = () => {
 
             <Link
               href="/courses"
-              className="inline-block text-lg text-white bg-apex-green px-6 py-2 rounded-md hover:bg-apex-blue-light transition-colors"
+              className="inline-block global-button rounded-md"
               aria-label={`Enroll in ${course.courseName}`}
             >
               Enroll Now
@@ -177,23 +177,33 @@ const Page = () => {
 
       <section id="modules" className="py-12 bg-[#f7faf7]">
         <div className="relative max-w-7xl mx-auto py-5">
-          <div className="mx-auto text-center">
-            <p className="inline-block px-4 py-2 text-base font-bold tracking-wide text-white bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg">
-              Curriculum
-            </p>
-          </div>
-          <div className="grid grid-cols-1 mt-14 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {course.module?.map((module, index) => (
-              <ModuleCard
-                key={index}
-                imageSrc={module.moduleImg}
-                imageAlt={module.moduleTitle}
-                title={module.moduleTitle}
-                description={module.moduleInfo}
-                moduleList={module.moduleList}
-              />
-            ))}
-          </div>
+          {course.module && course.module.length > 0 ? (
+            <>
+              <div className="mx-auto text-center">
+                <p className="inline-block px-4 py-2 text-base font-bold tracking-wide text-white bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg">
+                  Curriculum
+                </p>
+              </div>
+              <div className="grid grid-cols-1 mt-14 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {course.module.map((module, index) => (
+                  <ModuleCard
+                    key={index}
+                    imageSrc={module.moduleImg}
+                    imageAlt={module.moduleTitle}
+                    title={module.moduleTitle}
+                    description={module.moduleInfo}
+                    moduleList={module.moduleList}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className=" text-center">
+              <p className="text-lg text-gray-700 max-w-7xl mx-auto py-20 shadow-2xl rounded-lg px-4 sm:px-6 lg:px-8">
+                We are developing the modules, please be patient.
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>
