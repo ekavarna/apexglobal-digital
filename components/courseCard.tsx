@@ -44,7 +44,7 @@ const CourseCard = ({
         <div className="border-t border-gray-200 my-4"></div>
 
         {/* enrolledUser */}
-        <div className="flex items-center mb-4">
+        {/* <div className="flex items-center mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -67,7 +67,7 @@ const CourseCard = ({
             {" "}
             {enrolledUser}
           </p>
-        </div>
+        </div> */}
 
         {/* Description */}
         <p className="text-apex-text mb-6 flex-grow">{description}</p>

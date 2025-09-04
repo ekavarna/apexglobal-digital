@@ -3,31 +3,73 @@ import CourseCard from "@/components/courseCard";
 
 const cardData = [
   {
-    imageSrc: "/Low-Carbon-Xposium-page-thumbnail.png",
-    imageAlt: "Low Carbon Xposium Thumbnail",
-    title: "Low-Carbon Strategies for Achieving Net-Zero Targets",
+    imageSrc:
+      "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+    imageAlt: "Basic Occupational Safety and Health",
+    title: "Basic Occupational Safety and Health",
     enrolledUser: "22",
     description:
       "Whether you’re a sustainability officer, a compliance manager, or a business leader, this webinar will provide you with the tools, insights, and strategies necessary to take tangible steps toward net-zero today.",
-    link: "/courses/low-carbon-strategies-for-achieving-net-zero-targets/",
+    link: "/courses/basic-occupational-safety-and-health/",
   },
   {
-    imageSrc: "/Low-Carbon-Xposium-page-thumbnail.png",
-    imageAlt: "Sustainable Supply Chain Thumbnail",
-    title: "Building a Sustainable Supply Chain",
+    imageSrc:
+      "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+    imageAlt: "Business Continuity Management Systems",
+    title: "Business Continuity Management Systems",
     enrolledUser: "10",
     description:
       "Learn how to integrate sustainable practices into your supply chain to reduce environmental impact and improve efficiency.",
-    link: "/courses/sustainable-supply-chain/",
+    link: "/courses/business-continuity-management-systems/",
   },
   {
-    imageSrc: "/Low-Carbon-Xposium-page-thumbnail.png",
-    imageAlt: "Renewable Energy Webinar Thumbnail",
-    title: "Transitioning to Renewable Energy Sources",
+    imageSrc: "/img/course/APEX Global_course-cards_Data-Privacy-Act.png",
+    imageAlt: "Data Privacy Act",
+    title: "Data Privacy Act",
     enrolledUser: "15",
     description:
       "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
-    link: "/courses/renewable-energy-sources/",
+    link: "/courses/data-privacy-act/",
+  },
+  {
+    imageSrc: "/img/course/APEX-Global_course-cards_GRI-Standards.png",
+    imageAlt: "GRI Standards",
+    title: "GRI Standards",
+    enrolledUser: "15",
+    description:
+      "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
+    link: "/courses/gri-standards/",
+  },
+
+  {
+    imageSrc: "/img/course/APEX-Global_course-cards_Integrated-Reporting.png",
+    imageAlt: "Integrated Reporting",
+    title: "Integrated Reporting",
+    enrolledUser: "15",
+    description:
+      "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
+    link: "/courses/integrated-reporting/",
+  },
+  {
+    imageSrc:
+      "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png",
+    imageAlt: "International Financial Reporting Standards",
+    title: "International Financial Reporting Standards",
+    enrolledUser: "15",
+    description:
+      "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
+    link: "/courses/international-financial-reporting-standards/",
+  },
+
+  {
+    imageSrc:
+      "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
+    imageAlt: "Sustainability Reporting 101",
+    title: "Sustainability Reporting 101",
+    enrolledUser: "15",
+    description:
+      "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
+    link: "/courses/sustainability-reporting-101/",
   },
 ];
 

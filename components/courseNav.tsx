@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 const navItems = [
   { href: "#overview", label: "Overview" },
   { href: "#pre-requisites", label: "Pre-requisites" },
+  { href: "#modules", label: "Modules" },
 ];
 
 const CourseNav: FC = () => {

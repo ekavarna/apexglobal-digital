@@ -82,3 +82,51 @@ body {
   box-shadow: 0px 4px 16px 0px rgba(0, 39.00000000000007, 77, 0.2);
   padding: 15px 76px 15px 76px;
 }
+
+/* Custom styles for connected list items */
+
+/* Custom styles for vertical timeline */
+.vertical-timeline {
+  position: relative;
+  list-style-type: none;
+  padding-left: 2rem; /* Space for bullet and line */
+  margin: 0;
+}
+
+.vertical-timeline li {
+  position: relative;
+  margin-bottom: 1.5rem; /* Consistent spacing between items */
+  font-size: 1rem; /* Matches text-base */
+  color: #4b5563; /* Matches gray-600 from the image */
+  line-height: 1.625; /* Matches leading-relaxed */
+}
+
+.vertical-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem; /* Position bullet to the left of text */
+  top: 0.5rem; /* Center bullet vertically with text */
+  width: 0.75rem; /* Bullet size */
+  height: 0.75rem; /* Bullet size */
+  background-image: linear-gradient(
+    90deg,
+    var(--color-apex-green) 0%,
+    var(--color-apex-blue-light) 100%
+  ); /* Blue color from image */
+  border-radius: 50%; /* Circular bullet */
+  z-index: 1;
+}
+
+.vertical-timeline::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem; /* Align with center of bullets */
+  top: 0.5rem; /* Start just below the first bullet */
+  height: calc(100% - 2.625rem); /* Full height minus last bullet space */
+  width: 2px;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-apex-green) 0%,
+    var(--color-apex-blue-light) 100%
+  ); /* Match bullet color for line */
+}

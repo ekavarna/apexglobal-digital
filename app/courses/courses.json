@@ -1,11 +1,10 @@
-
 [
   {
-    "courseName": "Business Continuity Management Systems",
+    "courseName": "Basic Occupational Safety and Health",
     "courseSubtitle": "Foundations, Implementation, and Internal Audit",
     "courseBannerImage": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
     "overview": {
-      "overviewTitle": "OVERVIEW",
+      "overviewTitle": "OVERVIEW Basic Occupational Safety and Health",
       "overviewDescription": "This three-day course provides participants with the knowledge and skills to establish, implement, maintain, and continually improve a Business Continuity Management System (BCMS) based on ISO 22301. Participants will also learn how to conduct an internal audit of a BCMS.",
       "overviewImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png"
     },
@@ -22,7 +21,33 @@
         "Laptop with internet access",
         "Basic understanding of management systems (optional)"
       ]
-    }
+    },
+    "module": [
+      {
+        "moduleTitle": "Module-1",
+        "moduleSubtitle": "Introduction to Business Continuity Management",
+        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+        "moduleInfo": "This module provides an overview of business continuity management and the requirements of ISO 22301.",
+        "moduleList": [
+          "Understanding the concept of business continuity",
+          "Overview of ISO 22301",
+          "Key terms and definitions"
+        ]
+      },
+
+      {
+        "moduleTitle": "Module-2",
+        "moduleSubtitle": "Business Continuity Planning",
+        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+        "moduleInfo": "This module covers the key components of a business continuity plan and how to develop one.",
+        "moduleList": [
+          "Conducting a business impact analysis (BIA)",
+          "Developing recovery strategies",
+          "Creating a business continuity plan",
+          "Pass the exam with a minimum score of 70%"
+        ]
+      }
+    ]
   },
   {
     "courseName": "Data Privacy Act",
@@ -42,9 +67,7 @@
     "prerequisites": {
       "title": "PRE-REQUISITES",
       "subInfo": "No prior knowledge of data privacy is required.",
-      "list": [
-        "Laptop with internet access"
-      ]
+      "list": ["Laptop with internet access"]
     }
   }
 ]
