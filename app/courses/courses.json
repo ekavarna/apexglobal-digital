@@ -1,0 +1,50 @@
+
+[
+  {
+    "courseName": "Business Continuity Management Systems",
+    "courseSubtitle": "Foundations, Implementation, and Internal Audit",
+    "courseBannerImage": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+    "overview": {
+      "overviewTitle": "OVERVIEW",
+      "overviewDescription": "This three-day course provides participants with the knowledge and skills to establish, implement, maintain, and continually improve a Business Continuity Management System (BCMS) based on ISO 22301. Participants will also learn how to conduct an internal audit of a BCMS.",
+      "overviewImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png"
+    },
+    "keyHighlights": [
+      "Understand the fundamentals of business continuity and the requirements of ISO 22301.",
+      "Learn how to establish, implement, and maintain a BCMS.",
+      "Develop the skills to conduct an internal audit of a BCMS.",
+      "Gain insights into best practices for business continuity management."
+    ],
+    "prerequisites": {
+      "title": "PRE-REQUISITES",
+      "subInfo": "No prior knowledge of business continuity management is required. However, it is recommended that participants have a basic understanding of management systems.",
+      "list": [
+        "Laptop with internet access",
+        "Basic understanding of management systems (optional)"
+      ]
+    }
+  },
+  {
+    "courseName": "Data Privacy Act",
+    "courseSubtitle": "Compliance and Implementation",
+    "courseBannerImage": "/img/course/APEX Global_course-cards_Data-Privacy-Act.png",
+    "overview": {
+      "overviewTitle": "OVERVIEW",
+      "overviewDescription": "This two-day course provides a comprehensive overview of the Data Privacy Act of 2012 (DPA) and its implementing rules and regulations. Participants will learn how to comply with the DPA and implement a data privacy management system.",
+      "overviewImg": "/img/course/APEX Global_course-cards_Data-Privacy-Act.png"
+    },
+    "keyHighlights": [
+      "Understand the principles of data privacy and the requirements of the DPA.",
+      "Learn how to conduct a privacy impact assessment (PIA).",
+      "Develop a data privacy management program.",
+      "Understand the rights of data subjects and the obligations of personal information controllers and processors."
+    ],
+    "prerequisites": {
+      "title": "PRE-REQUISITES",
+      "subInfo": "No prior knowledge of data privacy is required.",
+      "list": [
+        "Laptop with internet access"
+      ]
+    }
+  }
+]
