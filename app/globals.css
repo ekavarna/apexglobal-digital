@@ -128,3 +128,35 @@ body {
     var(--color-apex-blue-light) 100%
   ); /* Match bullet color for line */
 }
+
+.elementor-2311 .elementor-element.elementor-element-22b3cce ul li:before {
+  content: "";
+  background-image: url("/tick-mark.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  margin-left: -50px;
+  padding-right: 50px;
+  vertical-align: middle;
+  position: absolute;
+}
+
+.li-tick {
+  list-style: none;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+.li-tick::before {
+  content: "";
+  background-image: url("/tick-mark.png"); /* Replace with actual image path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 24px;
+}

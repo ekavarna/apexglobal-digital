@@ -19,7 +19,7 @@ const cardData = [
     title: "Business Continuity Management Systems",
     enrolledUser: "10",
     description:
-      "Learn how to integrate sustainable practices into your supply chain to reduce environmental impact and improve efficiency.",
+      "The Business Continuity Management 101 course provides a structured introduction to the principles, concepts and practices of Business Continuity Management. It is designed to build essential awareness and foundational competencies in understanding requirements of ISO 22301 Business Continuity Management System (BCMS), Business Continuity Lifecycle (Plan–Do–Check–Act) and its application in safeguarding critical operations and assets. ",
     link: "/courses/business-continuity-management-systems/",
   },
   {

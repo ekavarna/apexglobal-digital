@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import CourseNav from "@/components/courseNav";
 import courses from "../courses.json";
 import ModuleCard from "@/components/moduleCard";
+import DOMPurify from "dompurify";
 
 // Utility function to slugify course names
 const slugify = (text: string) => {
@@ -18,6 +19,7 @@ const slugify = (text: string) => {
 
 const Page = () => {
   const pathname = usePathname();
+  const [sanitizedDescription, setSanitizedDescription] = useState<string>("");
   // Extract slug and handle trailing slashes
   const slug = pathname
     ? pathname
@@ -27,25 +29,33 @@ const Page = () => {
         ?.toLowerCase()
     : "";
 
-  // Debugging: Log the slug and courses to verify
-  console.log("Pathname:", pathname);
-  console.log("Slug:", slug);
-  console.log("Courses:", courses);
-
   // Find the course that matches the slug
-  console.log(
-    "Courses with Slugs:",
-    courses.map((c) => ({
-      name: c.courseName,
-      slug: slugify(c.courseName),
-    }))
-  );
-
   const course = courses.find((c) => slugify(c.courseName) === slug);
+
+  // Split attendees into three columns dynamically, safely
+  const attendees = course?.attendees ?? [];
+  const itemsPerColumn = Math.ceil(attendees.length / 3);
+  const columns = [
+    attendees.slice(0, itemsPerColumn),
+    attendees.slice(itemsPerColumn, itemsPerColumn * 2),
+    attendees.slice(itemsPerColumn * 2),
+  ];
+
+  // Load and sanitize overview description client-side
+  useEffect(() => {
+    if (course?.overview.overviewDescription) {
+      // Dynamically import DOMPurify to ensure it runs client-side
+      import("dompurify").then((DOMPurify) => {
+        setSanitizedDescription(
+          DOMPurify.default.sanitize(course.overview.overviewDescription)
+        );
+      });
+    }
+  }, [course]);
   if (!course) {
     return (
       <>
-        {/* Pre-requisites Section */}
+        {/* Course Not Found Section */}
         <section className="h-screen flex items-center justify-center bg-[#f7faf7]">
           <div className="relative  bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-2xl rounded-lg py-10 ">
             {/* Content */}
@@ -77,14 +87,14 @@ const Page = () => {
     <div>
       {/* Banner Section */}
       <section
-        className="relative flex items-center justify-center min-h-[400px] bg-gray-100 py-12 px-4 bg-cover bg-center"
+        className="relative flex items-center  min-h-[450px] bg-gray-100 py-12 px-4 bg-cover bg-center"
         style={{ backgroundImage: `url('${course.courseBannerImage}')` }}
       >
         <div className="absolute inset-0 bg-apex-blue-dark opacity-80 z-0"></div>
 
-        <div className="relative container mx-auto max-w-7xl px-4 z-10">
-          <div className="flex flex-col items-center text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+        <div className="relative container mx-auto max-w-7xl  z-10">
+          <div className="flex flex-col items-start text-left">
+            <h1 className="text-xl md:text-5xl max-w-6/12 font-semibold text-white mb-4">
               {course.courseName}
             </h1>
             <h2 className="text-xl md:text-2xl text-white font-light mb-6">
@@ -120,9 +130,11 @@ const Page = () => {
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {course.overview.overviewTitle}
               </h2>
-              <p className="text-base text-gray-700 leading-relaxed">
-                {course.overview.overviewDescription}
-              </p>
+
+              <div
+                className="text-base text-gray-700 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+              />
             </div>
             <div className="relative">
               <Image
@@ -173,6 +185,35 @@ const Page = () => {
         </div>
       </section>
 
+      {/* Who Should Attend Section */}
+
+      {course.attendees && course.attendees.length > 0 ? (
+        <>
+          <section id="attend" className="relative  py-20 bg-apex-blue-dark">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col ">
+              <h2 className="text-3xl font-bold text-left mb-8 text-white">
+                Who should <span className="text-apex-green">Attend?</span>
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                {columns.map((column, index) => (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside text-lg text-white font-light space-y-2"
+                  >
+                    {column.map((item, itemIndex) => (
+                      <li key={itemIndex} className="li-tick min-h-30 py-4">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      ) : null}
+
       {/* Modules Section */}
 
       <section id="modules" className="py-12 bg-[#f7faf7]">
@@ -181,7 +222,7 @@ const Page = () => {
             <>
               <div className="mx-auto text-center">
                 <p className="inline-block px-4 py-2 text-base font-bold tracking-wide text-white bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg">
-                  Curriculum
+                  Course Outline
                 </p>
               </div>
               <div className="grid grid-cols-1 mt-14 md:grid-cols-2 lg:grid-cols-3 gap-8">
