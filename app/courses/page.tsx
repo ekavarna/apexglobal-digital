@@ -76,8 +76,8 @@ const cardData = [
 const courseData = {
   imageSrc: "/bg.jpg",
   imageAlt: "Low Carbon Xposium Thumbnail",
-  courseName: "Course Name",
-  courseSubtitle: "Course Subtitle",
+  courseName: "Courses",
+  courseSubtitle: " ",
 };
 
 const coursesPage = () => {

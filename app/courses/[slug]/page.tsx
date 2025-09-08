@@ -6,7 +6,7 @@ import Link from "next/link";
 import CourseNav from "@/components/courseNav";
 import courses from "../courses.json";
 import ModuleCard from "@/components/moduleCard";
-import DOMPurify from "dompurify";
+// import DOMPurify from "dompurify";
 
 // Utility function to slugify course names
 const slugify = (text: string) => {
@@ -83,6 +83,10 @@ const Page = () => {
   // Debugging: Log the course data to verify it's loaded
   console.log("Course Data:", course);
 
+  // Get the ID for the section from navItems[1].href
+  const dynamicId =
+    course.navItems[1]?.href.replace("#", "") || "default-section";
+
   return (
     <div>
       {/* Banner Section */}
@@ -115,7 +119,7 @@ const Page = () => {
       {/* Navigation Section */}
       <section className=" mx-auto px-4 py-4 sticky top-20 bg-white z-10 shadow-lg">
         <div className="container text-center mx-auto py-4">
-          <CourseNav />
+          <CourseNav navItems={course.navItems} />
         </div>
       </section>
 
@@ -161,21 +165,21 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Pre-requisites Section */}
-      <section id="pre-requisites" className="py-12 bg-[#f7faf7]">
+      {/* Dynamic ContentSection */}
+      <section id={dynamicId} className="py-12 bg-[#f7faf7]">
         <div className="relative bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-xl rounded-lg py-8">
           <div className="absolute left-0 top-0 bg-gradient-to-r from-apex-green to-apex-blue-light text-white font-bold text-base px-4 py-2 rounded-tl-lg">
-            PRE-REQUISITES
+            {course.dynamicContent.title}
           </div>
           <div className="pt-12 space-y-6">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-              {course.prerequisites.title}
+              {course.dynamicContent.title}
             </h2>
             <p className="text-base text-gray-700 leading-relaxed">
-              {course.prerequisites.subInfo}
+              {course.dynamicContent.subInfo}
             </p>
             <ul className="list-disc pl-6 space-y-3 text-base text-gray-700">
-              {course.prerequisites.list.map((item, index) => (
+              {course.dynamicContent.list.map((item, index) => (
                 <li key={index} className="leading-relaxed li-highlight">
                   {item}
                 </li>
@@ -189,7 +193,7 @@ const Page = () => {
 
       {course.attendees && course.attendees.length > 0 ? (
         <>
-          <section id="attend" className="relative  py-20 bg-apex-blue-dark">
+          <section id="attendees" className="relative  py-20 bg-apex-blue-dark">
             <div className="max-w-7xl mx-auto px-4 flex flex-col ">
               <h2 className="text-3xl font-bold text-left mb-8 text-white">
                 Who should <span className="text-apex-green">Attend?</span>

@@ -1,79 +1,26 @@
 [
   {
-    "courseName": "Basic Occupational Safety and Health",
-    "courseSubtitle": "Foundations, Implementation, and Internal Audit",
-    "courseBannerImage": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
-    "overview": {
-      "overviewTitle": "OVERVIEW Basic Occupational Safety and Health",
-      "overviewDescription": "This three-day course provides participants with the knowledge and skills to establish, implement, maintain, and continually improve a Business Continuity Management System (BCMS) based on ISO 22301. Participants will also learn how to conduct an internal audit of a BCMS.",
-      "overviewImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png"
-    },
-    "keyHighlights": [
-      "Understand the fundamentals of business continuity and the requirements of ISO 22301.",
-      "Learn how to establish, implement, and maintain a BCMS.",
-      "Develop the skills to conduct an internal audit of a BCMS.",
-      "Gain insights into best practices for business continuity management."
-    ],
-    "prerequisites": {
-      "title": "PRE-REQUISITES",
-      "subInfo": "No prior knowledge of business continuity management is required. However, it is recommended that participants have a basic understanding of management systems.",
-      "list": [
-        "Laptop with internet access",
-        "Basic understanding of management systems (optional)"
-      ]
-    },
-    "module": [
-      {
-        "moduleTitle": "Module-1",
-        "moduleSubtitle": "Introduction to Business Continuity Management",
-        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
-        "moduleInfo": "This module provides an overview of business continuity management and the requirements of ISO 22301.",
-        "moduleList": [
-          "Understanding the concept of business continuity",
-          "Overview of ISO 22301",
-          "Key terms and definitions"
-        ]
-      },
-
-      {
-        "moduleTitle": "Module-2",
-        "moduleSubtitle": "Business Continuity Planning",
-        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
-        "moduleInfo": "This module covers the key components of a business continuity plan and how to develop one.",
-        "moduleList": [
-          "Conducting a business impact analysis (BIA)",
-          "Developing recovery strategies",
-          "Creating a business continuity plan",
-          "Pass the exam with a minimum score of 70%"
-        ]
-      }
-    ]
-  },
-  {
-    "courseName": "Data Privacy Act",
-    "courseSubtitle": "Compliance and Implementation",
-    "courseBannerImage": "/img/course/APEX Global_course-cards_Data-Privacy-Act.png",
-    "overview": {
-      "overviewTitle": "OVERVIEW",
-      "overviewDescription": "This two-day course provides a comprehensive overview of the Data Privacy Act of 2012 (DPA) and its implementing rules and regulations. Participants will learn how to comply with the DPA and implement a data privacy management system.",
-      "overviewImg": "/img/course/APEX Global_course-cards_Data-Privacy-Act.png"
-    },
-    "keyHighlights": [
-      "Understand the principles of data privacy and the requirements of the DPA.",
-      "Learn how to conduct a privacy impact assessment (PIA).",
-      "Develop a data privacy management program.",
-      "Understand the rights of data subjects and the obligations of personal information controllers and processors."
-    ],
-    "prerequisites": {
-      "title": "PRE-REQUISITES",
-      "subInfo": "No prior knowledge of data privacy is required.",
-      "list": ["Laptop with internet access"]
-    }
-  },
-  {
     "courseName": "Business Continuity Management Systems",
     "courseSubtitle": "",
     "courseBannerImage": "/img/course/Business-Continuity-Management-Systems-banner.png",
+    "navItems": [
+      {
+        "href": "#overview",
+        "label": "Overview"
+      },
+      {
+        "href": "#why-join",
+        "label": "Why Join?"
+      },
+      {
+        "href": "#attendees",
+        "label": "Attendees"
+      },
+      {
+        "href": "#module",
+        "label": "Course Outline"
+      }
+    ],
     "overview": {
       "overviewTitle": "OVERVIEW ",
       "overviewDescription": " The Business Continuity Management 101 course provides a comprehensive and structured introduction to the principles, concepts, and practices of Business Continuity Management. Designed for professionals seeking to build awareness and establish foundational competencies, this course explores how organizations can prepare for, respond to, and recover from disruptive incidents with confidence. Participants will gain a solid understanding of the requirements of ISO 22301 and learn how it provides a framework for maintaining the continuity of critical operations and protecting vital assets <br/> Through this program, learners will be introduced to the Business Continuity Lifecycle (Plan–Do–Check–Act), a systematic approach that ensures continuity strategies are not only planned but also implemented, tested, and continually improved. The course covers introduction to key components such as Incident Response Structure, Business Impact Analysis (BIA), Risk Assessment (RA), Strategy and Solutions, BCM Documentation, BCM Testing and many more, giving learners a holistic view of how continuity is developed, implemented, and maintained. <br/>By the end of the course, learners will be equipped with the knowledge and insights needed to support resilience initiatives needed to safeguard your organization against potential disruptions. ",
@@ -88,7 +35,7 @@
       "Appreciate the importance of testing, exercises, and continual improvement in strengthening resilience. ",
       "Understand how to evaluate BCMS performance through audits, reviews, and corrective actions. "
     ],
-    "prerequisites": {
+    "dynamicContent": {
       "title": "Why Join This Course? ",
       "subInfo": " ",
       "list": [
@@ -151,6 +98,24 @@
     "courseName": "Sustainability Reporting Fundamentals",
     "courseSubtitle": "",
     "courseBannerImage": "/img/course/Sustainability-Reporting-fundamentals-banner.jpg",
+    "navItems": [
+      {
+        "href": "#overview",
+        "label": "Overview"
+      },
+      {
+        "href": "#objectives",
+        "label": "Learning Objectives"
+      },
+      {
+        "href": "#attendees",
+        "label": "Attendees"
+      },
+      {
+        "href": "#modules",
+        "label": "Module"
+      }
+    ],
     "overview": {
       "overviewTitle": "OVERVIEW ",
       "overviewDescription": " Sustainability Reporting Fundamentals provides a comprehensive introduction to the evolving world of sustainability reporting. Beginning with corporate sustainability fundamentals, the course explores the rising demand for sustainability disclosures, the principles guiding effective reporting, and the practical steps organizations can take to produce meaningful reports. Learners will also examine the unique challenges in reporting, such as catering to multiple audiences, standardizing data, and ensuring credibility. By the end of the course, participants will understand how sustainability reporting supports transparency, compliance, risk management, and long-term business success, while also positioning organizations to meet investor, regulatory, and societal expectations ",
@@ -164,7 +129,7 @@
       "Discussion of real-world challenges and future opportunities in reporting ",
       "Aligned with global frameworks (GRI, SASB, TCFD, IFRS) "
     ],
-    "prerequisites": {
+    "dynamicContent": {
       "title": "Learning Objectives ",
       "subInfo": " ",
       "list": [

@@ -4,13 +4,18 @@ import Link from "next/link";
 import { FC } from "react";
 import { useState, useEffect } from "react";
 
-const navItems = [
-  { href: "#overview", label: "Overview" },
-  { href: "#pre-requisites", label: "Pre-requisites" },
-  { href: "#modules", label: "Modules" },
-];
+// Define the shape of a single nav item
+interface NavItem {
+  href: string;
+  label: string;
+}
 
-const CourseNav: FC = () => {
+// Define the props interface for the CourseNav component
+interface CourseNavProps {
+  navItems: NavItem[];
+}
+
+const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
   const [activeHash, setActiveHash] = useState<string>("");
 
   useEffect(() => {
