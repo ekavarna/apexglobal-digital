@@ -19,7 +19,7 @@ const Nav: React.FC = () => {
             alt="Apex Global Learning Logo"
             width={150}
             height={48}
-            className="h-12 w-auto"
+            className="max-h-12 w-auto" // Optional: constrain max height
             priority
           />
 

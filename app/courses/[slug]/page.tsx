@@ -81,7 +81,7 @@ const Page = () => {
     );
   }
   // Debugging: Log the course data to verify it's loaded
-  console.log("Course Data:", course);
+  //console.log("Course Data:", course);
 
   // Get the ID for the section from navItems[1].href
   const dynamicId =

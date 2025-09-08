@@ -75,7 +75,7 @@ const cardData = [
 
 const courseData = {
   imageSrc: "/bg.jpg",
-  imageAlt: "Low Carbon Xposium Thumbnail",
+  imageAlt: "Course Background",
   courseName: "Courses",
   courseSubtitle: " ",
 };
@@ -84,7 +84,7 @@ const coursesPage = () => {
   return (
     <div>
       <section
-        className="relative flex items-center justify-center min-h-[500px] bg-gray-100 py-12 px-4"
+        className="relative flex items-center justify-center h-[250px] md:min-h-[500px] bg-gray-100 py-12 px-4"
         style={{
           backgroundImage: `url('${courseData.imageSrc}')`,
         }}
@@ -93,7 +93,7 @@ const coursesPage = () => {
         <div className="absolute inset-0 bg-apex-blue-light opacity-50 z-0"></div>
 
         {/* Container */}
-        <div className="relative container mx-auto max-w-7xl px-4 z-10">
+        <div className="relative container pt-16 md:pt-0 mx-auto max-w-7xl px-4 z-10">
           <div className="flex flex-col items-center text-center">
             {/* Heading 1 */}
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
