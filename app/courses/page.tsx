@@ -64,12 +64,12 @@ const cardData = [
   {
     imageSrc:
       "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
-    imageAlt: "Sustainability Reporting 101",
-    title: "Sustainability Reporting 101",
-    enrolledUser: "15",
+    imageAlt: "Sustainability Reporting Fundamentals",
+    title: "Sustainability Reporting Fundamentals",
+    enrolledUser: "",
     description:
-      "Explore the latest trends and technologies in renewable energy to power your business sustainably.",
-    link: "/courses/sustainability-reporting-101/",
+      "This course introduces the fundamentals of Sustainability reporting—its purpose, principles, popular global frameworks and challenges — equipping learners with the knowledge to set out on a credible, stakeholder-focused reporting journey that drives long-term value creation. ",
+    link: "/courses/sustainability-reporting-fundamentals/",
   },
 ];
 

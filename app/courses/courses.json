@@ -146,5 +146,91 @@
         ]
       }
     ]
+  },
+  {
+    "courseName": "Sustainability Reporting Fundamentals",
+    "courseSubtitle": "",
+    "courseBannerImage": "/img/course/Sustainability-Reporting-fundamentals-banner.jpg",
+    "overview": {
+      "overviewTitle": "OVERVIEW ",
+      "overviewDescription": " Sustainability Reporting Fundamentals provides a comprehensive introduction to the evolving world of sustainability reporting. Beginning with corporate sustainability fundamentals, the course explores the rising demand for sustainability disclosures, the principles guiding effective reporting, and the practical steps organizations can take to produce meaningful reports. Learners will also examine the unique challenges in reporting, such as catering to multiple audiences, standardizing data, and ensuring credibility. By the end of the course, participants will understand how sustainability reporting supports transparency, compliance, risk management, and long-term business success, while also positioning organizations to meet investor, regulatory, and societal expectations ",
+      "overviewImg": "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png"
+    },
+    "keyHighlights": [
+      "Step-by-step introduction to sustainability reporting concepts and evolution ",
+      "Exploration of global and local reporting ecosystems and trends ",
+      "Practical guidance on applying reporting principles and approaches ",
+      "Insights on reporting formats and the role of technology ",
+      "Discussion of real-world challenges and future opportunities in reporting ",
+      "Aligned with global frameworks (GRI, SASB, TCFD, IFRS) "
+    ],
+    "prerequisites": {
+      "title": "Learning Objectives ",
+      "subInfo": " ",
+      "list": [
+        "Gain a clear foundation in one of today’s most in-demand business skills  ",
+        "Understand regulatory and market drivers shaping corporate disclosures ",
+        "Build practical skills to support sustainability report preparation ",
+        "Learn how to communicate sustainability performance credibly and effectively ",
+        "Position yourself or your organization as a leader in ESG and reporting practices "
+      ]
+    },
+    "attendees": [
+      "Sustainability and CSR practitioners  ",
+      "Finance, Accounting, and Compliance professionals ",
+      "Corporate communications and investor relations teams ",
+      "Business leaders and managers responsible for ESG performance ",
+      "Students, educators, and professionals exploring careers in sustainability reporting "
+    ],
+
+    "module": [
+      {
+        "moduleTitle": "Module-1",
+        "moduleSubtitle": "Sustainability Reporting Fundamentals",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
+        "moduleInfo": "Sustainability Reporting Fundamentals",
+        "moduleList": [
+          "Introduction to Sustainability ",
+          "Key Reasons why Businesses Should Prioritize Sustainability ",
+          "Real-life Scenarios ",
+          "Next step: How do we communicate commitment? "
+        ]
+      },
+
+      {
+        "moduleTitle": "Module-2",
+        "moduleSubtitle": "Demand for Sustainability Reporting",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
+        "moduleInfo": "Demand for Sustainability Reporting ",
+        "moduleList": [
+          "Evolution of Corporate Disclosures ",
+          "Sustainability reporting overview  ",
+          "Sustainability Reporting Ecosystem "
+        ]
+      },
+      {
+        "moduleTitle": "Module-3",
+        "moduleSubtitle": "Sustainability Reporting Principles and Implementation",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
+        "moduleInfo": "Sustainability Reporting Principles and Implementation",
+        "moduleList": [
+          "Sustainability Reporting Principles  ",
+          "Sustainability Reporting: A Practical Approach ",
+          "Reporting formats and technology’s role in reporting "
+        ]
+      },
+      {
+        "moduleTitle": "Module-4",
+        "moduleSubtitle": "Sustainability Reporting Unique Challenges",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Sustainability-Reporting-101.png",
+        "moduleInfo": "Sustainability Reporting Unique Challenges",
+        "moduleList": [
+          "Challenges in sustainability reporting ",
+          "Systems for comprehensive reporting ",
+          "Opportunities for the Future ",
+          "Investors Challenges "
+        ]
+      }
+    ]
   }
 ]
