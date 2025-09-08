@@ -91,14 +91,14 @@ const Page = () => {
     <div>
       {/* Banner Section */}
       <section
-        className="relative flex items-center  min-h-[450px] bg-gray-100 py-12 px-4 bg-cover bg-center"
+        className="relative flex items-center mt-20 md:mt-6 md:min-h-[450px] bg-gray-100 py-12 px-4 bg-cover bg-center"
         style={{ backgroundImage: `url('${course.courseBannerImage}')` }}
       >
         <div className="absolute inset-0 bg-apex-blue-dark opacity-80 z-0"></div>
 
         <div className="relative container mx-auto max-w-7xl  z-10">
           <div className="flex flex-col items-start text-left">
-            <h1 className="text-xl md:text-5xl max-w-6/12 font-semibold text-white mb-4">
+            <h1 className="text-xl md:text-5xl md:max-w-6/12 font-semibold text-white mb-4">
               {course.courseName}
             </h1>
             <h2 className="text-xl md:text-2xl text-white font-light mb-6">
@@ -117,14 +117,14 @@ const Page = () => {
       </section>
 
       {/* Navigation Section */}
-      <section className=" mx-auto px-4 py-4 sticky top-20 bg-white z-10 shadow-lg">
+      <section className=" mx-auto px-4  sticky top-20 bg-white z-10 shadow-lg">
         <div className="container text-center mx-auto py-4">
           <CourseNav navItems={course.navItems} />
         </div>
       </section>
 
       {/* Overview Section */}
-      <section id="overview" className="py-12 bg-[#f7faf7]">
+      <section id="overview" className="py-12 px-4 bg-[#f7faf7]">
         <div className="relative bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-xl rounded-lg py-8">
           <div className="absolute left-0 top-0 bg-gradient-to-r from-apex-green to-apex-blue-light text-white font-bold text-base px-4 py-2 rounded-tl-lg">
             OVERVIEW
@@ -166,7 +166,7 @@ const Page = () => {
       </section>
 
       {/* Dynamic ContentSection */}
-      <section id={dynamicId} className="py-12 bg-[#f7faf7]">
+      <section id={dynamicId} className="py-12 px-4 bg-[#f7faf7]">
         <div className="relative bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-xl rounded-lg py-8">
           <div className="absolute left-0 top-0 bg-gradient-to-r from-apex-green to-apex-blue-light text-white font-bold text-base px-4 py-2 rounded-tl-lg">
             {course.dynamicContent.title}
@@ -206,7 +206,7 @@ const Page = () => {
                     className="list-disc list-inside text-lg text-white font-light space-y-2"
                   >
                     {column.map((item, itemIndex) => (
-                      <li key={itemIndex} className="li-tick min-h-30 py-4">
+                      <li key={itemIndex} className="li-tick md:min-h-30 py-4">
                         {item}
                       </li>
                     ))}
@@ -220,7 +220,7 @@ const Page = () => {
 
       {/* Modules Section */}
 
-      <section id="modules" className="py-12 bg-[#f7faf7]">
+      <section id="modules" className="py-12 px-4  bg-[#f7faf7]">
         <div className="relative max-w-7xl mx-auto py-5">
           {course.module && course.module.length > 0 ? (
             <>

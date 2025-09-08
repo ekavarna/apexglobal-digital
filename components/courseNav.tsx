@@ -43,26 +43,36 @@ const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
 
   const getActiveClass = (href: string) => {
     return activeHash === href
-      ? "text-white text-semibold bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg p-3.5"
+      ? "text-white font-semibold bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg px-3 py-2 "
       : "";
+  };
+  const getLinkClass = (href: string) => {
+    return activeHash === href
+      ? "text-white font-medium" // No hover styles for active item
+      : "text-apex-text font-medium hover:text-apex-blue-dark hover:underline decoration-2 hover:underline-offset-4";
   };
 
   return (
-    <ul className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 list-none">
-      {navItems.map((item, index) => (
-        <li key={index} className="menu-item">
-          <Link
-            href={item.href}
-            onClick={() => handleLinkClick(item.href)}
-            className={`text-apex-text text-lg pb-3 font-medium hover:text-apex-blue-dark hover:underline decoration-2 hover:underline-offset-4 transition-colors duration-200 ${getActiveClass(
-              item.href
-            )}`}
+    <div className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide">
+      <ul className="flex flex-row justify-start md:justify-center items-center space-x-4 md:space-x-8 list-none px-4  md:p-0 whitespace-nowrap ">
+        {navItems.map((item, index) => (
+          <li
+            key={index}
+            className={`menu-item flex-shrink-0 ${getActiveClass(item.href)}`}
           >
-            {item.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+            <Link
+              href={item.href}
+              onClick={() => handleLinkClick(item.href)}
+              className={`text-lg transition-colors duration-200 ${getLinkClass(
+                item.href
+              )}`}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

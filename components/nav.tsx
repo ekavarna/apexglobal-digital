@@ -1,21 +1,30 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Nav: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="bg-white text-apex-blue-dark fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
         {/* Left Logo and Dropdown */}
         <div className="flex items-center space-x-6">
           <Image
-            className="h-12 w-auto"
             src="/apex-logo.png"
             alt="Apex Global Learning Logo"
             width={150}
             height={48}
+            className="h-12 w-auto"
+            priority
           />
 
-          <div className="relative group">
+          {/* Desktop Dropdown */}
+          <div className="hidden md:block relative group">
             <button className="flex items-center bg-apex-blue-light p-3 rounded-lg text-white space-x-2 hover:text-gray-300 transition-colors">
               <span>Courses</span>
               <svg
@@ -51,8 +60,30 @@ const Nav: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Menu */}
-        <div className="flex items-center space-x-4 mt-4 md:mt-0">
+        {/* Hamburger Button for Mobile */}
+        <button
+          className="md:hidden flex items-center p-2 focus:outline-none"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-4">
           <a
             href="https://www.apexgloballearning.com/enterprise/custom-content-design/"
             target="_blank"
@@ -78,6 +109,115 @@ const Nav: React.FC = () => {
             Contact Us
           </a>
         </div>
+
+        {/* Mobile Slide-in Menu */}
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          } md:hidden z-50`}
+        >
+          <div className="flex flex-col p-4 space-y-4">
+            {/* Close Button */}
+            <button
+              className="self-end p-2 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Mobile Courses Menu */}
+            <div className="border-b border-gray-200">
+              <button
+                className="flex items-center justify-between w-full p-2 text-left text-apex-blue-dark font-semibold"
+                onClick={() => setIsMenuOpen(true)}
+              >
+                Courses
+                <svg
+                  width="15"
+                  height="8"
+                  viewBox="0 0 15 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.6854 1L7.62638 10L1.56738 1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              <div className="mt-2 space-y-2">
+                <a
+                  href="/local/tenant/coursedetails.php?catname=Sustainability Reporting Fundamentals"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={toggleMenu}
+                >
+                  Sustainability Reporting Fundamentals
+                </a>
+                <a
+                  href="/local/tenant/coursedetails.php?catname=Business Continuity Management 101"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={toggleMenu}
+                >
+                  Business Continuity Management Systems
+                </a>
+              </div>
+            </div>
+
+            {/* Mobile Navigation Links */}
+            <a
+              href="https://www.apexgloballearning.com/enterprise/custom-content-design/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 hover:text-apex-blue-light transition-colors"
+              onClick={toggleMenu}
+            >
+              eLearning
+            </a>
+            <a
+              href="/local/tenant/viewflowpage.php#aboutus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 hover:text-apex-blue-light transition-colors"
+              onClick={toggleMenu}
+            >
+              About Us
+            </a>
+            <a
+              href="https://www.apexgloballearning.com/contact-us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 text-apex-blue-light border-2 border-apex-blue-light text-center rounded-md hover:bg-apex-blue-light hover:text-white transition-colors"
+              onClick={toggleMenu}
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        {/* Overlay for Mobile Menu */}
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 pt-5 bg-black bg-opacity-50 md:hidden"
+            onClick={toggleMenu}
+          ></div>
+        )}
       </div>
     </header>
   );

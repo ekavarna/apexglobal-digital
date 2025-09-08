@@ -41,9 +41,12 @@ const ModuleCard = ({
         <p className="text-apex-text mb-6 flex-grow">{description}</p>
 
         {/* Module List */}
-        <ul className="vertical-timeline">
+        <ul className="relative list-none pl-7">
           {moduleList.map((item, index) => (
-            <li key={index} className="leading-relaxed  text-base font-light">
+            <li
+              key={index}
+              className="leading-relaxed vertical-timeline text-base font-light"
+            >
               {item}
             </li>
           ))}
