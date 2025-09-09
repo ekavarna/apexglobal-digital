@@ -1,13 +1,74 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Use usePathname instead of useRouter
+
+// Define course data
+const courses = [
+  {
+    title: "Sustainability Reporting Fundamentals",
+    href: "/courses/sustainability-reporting-fundamentals/",
+  },
+  {
+    title: "Business Continuity Management Systems",
+    href: "/courses/business-continuity-management-systems/",
+  },
+];
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname(); // Get current pathname
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Close dropdown when mobile menu is toggled
+    setIsDropdownOpen(false);
   };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  // Reset dropdown and mobile menu on pathname change
+  useEffect(() => {
+    setIsDropdownOpen(false);
+    setIsMenuOpen(false);
+  }, [pathname]); // Trigger when pathname changes
+
+  // Shared dropdown menu component
+  const renderDropdownMenu = (isMobile: boolean = false) => (
+    <div
+      className={`${
+        isMobile
+          ? "mt-2 space-y-2"
+          : "absolute bg-white text-gray-900 shadow-lg rounded-md mt-1 w-64 left-0 z-50 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+      } ${isDropdownOpen || isMobile ? "block opacity-100" : "hidden"}`}
+      onMouseEnter={!isMobile ? () => setIsDropdownOpen(true) : undefined}
+      onMouseLeave={!isMobile ? () => setIsDropdownOpen(false) : undefined}
+    >
+      {courses.map((course) => (
+        <Link
+          key={course.href}
+          href={course.href}
+          className={`block px-4 py-2 hover:bg-gray-100 ${
+            isMobile ? "text-apex-blue-dark" : ""
+          }`}
+          onClick={() => {
+            closeDropdown();
+            if (isMobile) toggleMenu();
+          }}
+        >
+          {course.title}
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <header className="bg-white text-apex-blue-dark fixed w-full top-0 z-50 shadow-md">
@@ -19,13 +80,17 @@ const Nav: React.FC = () => {
             alt="Apex Global Learning Logo"
             width={150}
             height={48}
-            className="max-h-12 w-auto" // Optional: constrain max height
+            className="max-h-12 w-auto"
             priority
           />
 
           {/* Desktop Dropdown */}
           <div className="hidden md:block relative group">
-            <button className="flex items-center bg-apex-blue-light p-3 rounded-lg text-white space-x-2 hover:text-gray-300 transition-colors">
+            <button
+              className="flex items-center bg-apex-blue-light p-3 rounded-lg text-white space-x-2 hover:text-gray-300 transition-colors"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
               <span>Courses</span>
               <svg
                 width="15"
@@ -43,20 +108,7 @@ const Nav: React.FC = () => {
                 />
               </svg>
             </button>
-            <div className="absolute hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 w-64">
-              <a
-                href="/local/tenant/coursedetails.php?catname=Sustainability Reporting Fundamentals"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Sustainability Reporting Fundamentals
-              </a>
-              <a
-                href="/local/tenant/coursedetails.php?catname=Business Continuity Management 101"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Business Continuity Management Systems
-              </a>
-            </div>
+            {renderDropdownMenu()}
           </div>
         </div>
 
@@ -143,7 +195,7 @@ const Nav: React.FC = () => {
             <div className="border-b border-gray-200">
               <button
                 className="flex items-center justify-between w-full p-2 text-left text-apex-blue-dark font-semibold"
-                onClick={() => setIsMenuOpen(true)}
+                onClick={toggleDropdown}
               >
                 Courses
                 <svg
@@ -152,6 +204,9 @@ const Nav: React.FC = () => {
                   viewBox="0 0 15 10"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    isDropdownOpen ? "rotate-180" : ""
+                  } transition-transform`}
                 >
                   <path
                     d="M13.6854 1L7.62638 10L1.56738 1"
@@ -162,26 +217,11 @@ const Nav: React.FC = () => {
                   />
                 </svg>
               </button>
-              <div className="mt-2 space-y-2">
-                <a
-                  href="/local/tenant/coursedetails.php?catname=Sustainability Reporting Fundamentals"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                  onClick={toggleMenu}
-                >
-                  Sustainability Reporting Fundamentals
-                </a>
-                <a
-                  href="/local/tenant/coursedetails.php?catname=Business Continuity Management 101"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                  onClick={toggleMenu}
-                >
-                  Business Continuity Management Systems
-                </a>
-              </div>
+              {renderDropdownMenu(true)}
             </div>
 
             {/* Mobile Navigation Links */}
-            <a
+            <Link
               href="https://www.apexgloballearning.com/enterprise/custom-content-design/"
               target="_blank"
               rel="noopener noreferrer"
@@ -189,8 +229,8 @@ const Nav: React.FC = () => {
               onClick={toggleMenu}
             >
               eLearning
-            </a>
-            <a
+            </Link>
+            <Link
               href="/local/tenant/viewflowpage.php#aboutus"
               target="_blank"
               rel="noopener noreferrer"
@@ -198,8 +238,8 @@ const Nav: React.FC = () => {
               onClick={toggleMenu}
             >
               About Us
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.apexgloballearning.com/contact-us/"
               target="_blank"
               rel="noopener noreferrer"
@@ -207,7 +247,7 @@ const Nav: React.FC = () => {
               onClick={toggleMenu}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
 
