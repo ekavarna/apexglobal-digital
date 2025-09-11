@@ -146,7 +146,7 @@ const Nav: React.FC = () => {
             eLearning
           </a>
           <a
-            href="/local/tenant/viewflowpage.php#aboutus"
+            href="https://www.apexgloballearning.com/about-us/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-apex-blue-light transition-colors"
@@ -232,7 +232,7 @@ const Nav: React.FC = () => {
               eLearning
             </Link>
             <Link
-              href="/local/tenant/viewflowpage.php#aboutus"
+              href="https://www.apexgloballearning.com/about-us/"
               target="_blank"
               rel="noopener noreferrer"
               className="block py-2 hover:text-apex-blue-light transition-colors"
