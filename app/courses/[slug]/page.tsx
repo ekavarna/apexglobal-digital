@@ -106,7 +106,8 @@ const Page = () => {
             </h2>
 
             <Link
-              href="/courses"
+              href="https://digitallms.apexgloballearning.com/landingpage/frontpage.php"
+              target="_blank"
               className="inline-block global-button rounded-md"
               aria-label={`Enroll in ${course.courseName}`}
             >
@@ -254,5 +255,5 @@ const Page = () => {
     </div>
   );
 };
-export const runtime = 'edge';
+export const runtime = "edge";
 export default Page;

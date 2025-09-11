@@ -75,15 +75,16 @@ const Nav: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
         {/* Left Logo and Dropdown */}
         <div className="flex items-center space-x-6">
-          <Image
-            src="/apex-logo.png"
-            alt="Apex Global Learning Logo"
-            width={150}
-            height={48}
-            className="max-h-12 w-auto"
-            priority
-          />
-
+          <Link href="https://digital.apexgloballearning.com/">
+            <Image
+              src="/apex-logo.png"
+              alt="Apex Global Learning Logo"
+              width={150}
+              height={48}
+              className="max-h-12 w-auto"
+              priority
+            />
+          </Link>
           {/* Desktop Dropdown */}
           <div className="hidden md:block relative group">
             <button
