@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
       style={{ backgroundImage: `url('/img/course/apex-global-bg.png')` }}
     >
       <ToastContainer />
-      <div className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 items-center">
+      <div className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-[2fr_2fr] gap-8 items-center">
         <div className="hidden md:flex items-center justify-center bg-cover bg-center rounded-l-xl">
           <span className="text-4xl font-bold text-white">
             <span className="text-[#bac500]">
@@ -114,7 +114,7 @@ const HomePage: React.FC = () => {
         >
           {showSignIn ? (
             <form
-              action="/login/index.php"
+              action="https://digitallms.apexgloballearning.com/login/index.php"
               method="post"
               id="signIn"
               className="space-y-4"
