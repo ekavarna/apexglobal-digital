@@ -24,7 +24,7 @@
     "overview": {
       "overviewTitle": "OVERVIEW ",
       "overviewDescription": " The Business Continuity Management 101 course provides a comprehensive and structured introduction to the principles, concepts, and practices of Business Continuity Management. Designed for professionals seeking to build awareness and establish foundational competencies, this course explores how organizations can prepare for, respond to, and recover from disruptive incidents with confidence. Participants will gain a solid understanding of the requirements of ISO 22301 and learn how it provides a framework for maintaining the continuity of critical operations and protecting vital assets <br/> Through this program, learners will be introduced to the Business Continuity Lifecycle (Plan–Do–Check–Act), a systematic approach that ensures continuity strategies are not only planned but also implemented, tested, and continually improved. The course covers introduction to key components such as Incident Response Structure, Business Impact Analysis (BIA), Risk Assessment (RA), Strategy and Solutions, BCM Documentation, BCM Testing and many more, giving learners a holistic view of how continuity is developed, implemented, and maintained. <br/>By the end of the course, learners will be equipped with the knowledge and insights needed to support resilience initiatives needed to safeguard your organization against potential disruptions. ",
-      "overviewImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png"
+      "overviewImg": "/img/course/APEX-Global_course-cards_Business-Continuity-Management-Systems.png"
     },
     "keyHighlights": [
       "The course comprises 3 modules with 10 lesson areas. ",
@@ -60,7 +60,7 @@
       {
         "moduleTitle": "Module-1",
         "moduleSubtitle": "Planning the Business Continuity Management System (BCMS)",
-        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Business-Continuity-Management-Systems.png",
         "moduleInfo": "Planning the Business Continuity Management System (BCMS)",
         "moduleList": [
           "Introduction to BCMS ",
@@ -72,7 +72,7 @@
       {
         "moduleTitle": "Module-2",
         "moduleSubtitle": "Preparation of the Business Continuity Management System (BCMS) ",
-        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Business-Continuity-Management-Systems.png",
         "moduleInfo": "Preparation of the Business Continuity Management System (BCMS) ",
         "moduleList": [
           "Awareness and Competency ",
@@ -84,7 +84,7 @@
       {
         "moduleTitle": "Module-3",
         "moduleSubtitle": "Implementation and Evaluation of the Business Continuity Management System (BCMS)",
-        "moduleImg": "/img/course/APEX Global_course-cards_Business-Continuity-Management-Systems.png",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Business-Continuity-Management-Systems.png",
         "moduleInfo": "Implementation and Evaluation of the Business Continuity Management System (BCMS)",
         "moduleList": [
           "Documentation and Implementation  ",

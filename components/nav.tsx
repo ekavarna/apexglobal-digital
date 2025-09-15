@@ -72,6 +72,26 @@ const Nav: React.FC = () => {
 
   return (
     <header className="bg-white text-apex-blue-dark fixed w-full top-0 z-50 shadow-md">
+      <input
+        type="hidden"
+        name="newtoken"
+        id="newtoken"
+        value="CYzQAFHkGNI9NedMDc98ZsZnRATHuMcw"
+      />
+      <input type="hidden" name="companyval" id="companyval" value="15" />
+      <input
+        type="hidden"
+        name="sessionloginmsg"
+        id="sessionloginmsg"
+        value=""
+      />
+      <input
+        type="hidden"
+        name="loginsesskey"
+        id="loginsesskey"
+        value="Uz6oQNreeE"
+      />
+
       <div className="container mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
         {/* Left Logo and Dropdown */}
         <div className="flex items-center space-x-6">
