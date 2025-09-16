@@ -14,11 +14,11 @@
       },
       {
         "href": "#attendees",
-        "label": "Attendees"
+        "label": "Who is it for?"
       },
       {
-        "href": "#module",
-        "label": "Course Outline"
+        "href": "#modules",
+        "label": "Modules"
       }
     ],
     "overview": {
@@ -109,11 +109,11 @@
       },
       {
         "href": "#attendees",
-        "label": "Attendees"
+        "label": "Who is it for?"
       },
       {
         "href": "#modules",
-        "label": "Module"
+        "label": "Modules"
       }
     ],
     "overview": {

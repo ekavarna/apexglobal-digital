@@ -264,7 +264,7 @@ const Nav: React.FC = () => {
                   strokeDasharray="0,3"
                 />
               </svg>
-              <span className="block tracking-wide">All Courses</span>
+              <span className="block tracking-wide">eLearning</span>
             </button>
             {renderDropdownMenu(courses, false, true)}
           </div>
@@ -367,14 +367,7 @@ const Nav: React.FC = () => {
             </button>
             {renderDropdownMenu(enterpriseDropdown, false, false)}
           </div>
-          <a
-            href="https://www.apexgloballearning.com/enterprise/custom-content-design/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-apex-blue-light transition-colors py-2"
-          >
-            eLearning
-          </a>
+
           <a
             href="https://www.apexgloballearning.com/about-us/"
             target="_blank"
@@ -548,15 +541,7 @@ const Nav: React.FC = () => {
             </div>
 
             {/* Mobile Navigation Links */}
-            <Link
-              href="https://www.apexgloballearning.com/enterprise/custom-content-design/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block py-3 hover:text-apex-blue-light transition-colors border-b border-gray-200"
-              onClick={toggleMenu}
-            >
-              eLearning
-            </Link>
+
             <Link
               href="https://www.apexgloballearning.com/about-us/"
               target="_blank"

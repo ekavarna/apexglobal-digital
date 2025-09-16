@@ -18,14 +18,44 @@ interface CourseNavProps {
 const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
   const [activeHash, setActiveHash] = useState<string>("");
 
-  useEffect(() => {
-    // Set initial hash
-    setActiveHash(window.location.hash || "");
+  // Handle scroll to section with offset for sticky nav
+  const scrollToSection = (hash: string) => {
+    if (!hash) return;
 
-    // Handle hash changes
+    setTimeout(() => {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        // Calculate sticky nav height (top-20 ~ 80px)
+        const navElement = document.querySelector(".sticky");
+        const navHeight = navElement?.offsetHeight || 80; // Fallback to 80px
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+
+        window.scrollTo({
+          top: elementPosition - navHeight - 40,
+          behavior: "smooth",
+        });
+      } else {
+        console.warn(`Element with ID "${id}" not found`);
+      }
+    }, 100); // Delay to ensure DOM is ready
+  };
+
+  useEffect(() => {
+    // Set initial hash and scroll on page load
+    const initialHash = window.location.hash || "";
+    setActiveHash(initialHash);
+    if (initialHash) {
+      scrollToSection(initialHash);
+    }
+
+    // Handle hash changes (e.g., browser back/forward)
     const handleHashChange = () => {
-      console.log("Hash changed to:", window.location.hash); // Debug log
-      setActiveHash(window.location.hash || "");
+      const newHash = window.location.hash || "";
+      console.log("Hash changed to:", newHash); // Debug log
+      setActiveHash(newHash);
+      scrollToSection(newHash);
     };
 
     window.addEventListener("hashchange", handleHashChange);
@@ -37,24 +67,26 @@ const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
   }, []);
 
   const handleLinkClick = (href: string) => {
-    // Update activeHash when a link is clicked
+    // Update activeHash and trigger scroll
     setActiveHash(href);
+    scrollToSection(href);
   };
 
   const getActiveClass = (href: string) => {
     return activeHash === href
-      ? "text-white font-semibold bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg px-3 py-2 "
+      ? "text-white font-semibold bg-gradient-to-r from-apex-green to-apex-blue-light rounded-lg px-3 py-2"
       : "";
   };
+
   const getLinkClass = (href: string) => {
     return activeHash === href
-      ? "text-white font-medium" // No hover styles for active item
+      ? "text-white font-medium"
       : "text-apex-text font-medium hover:text-apex-blue-dark hover:underline decoration-2 hover:underline-offset-4";
   };
 
   return (
     <div className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide">
-      <ul className="flex flex-row justify-start md:justify-center items-center space-x-4 md:space-x-8 list-none px-4  md:p-0 whitespace-nowrap ">
+      <ul className="flex flex-row justify-start md:justify-center items-center space-x-4 md:space-x-8 list-none px-4 md:p-0 whitespace-nowrap">
         {navItems.map((item, index) => (
           <li
             key={index}
@@ -62,7 +94,10 @@ const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
           >
             <Link
               href={item.href}
-              onClick={() => handleLinkClick(item.href)}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent browser default scroll
+                handleLinkClick(item.href);
+              }}
               className={`text-lg transition-colors duration-200 ${getLinkClass(
                 item.href
               )}`}
