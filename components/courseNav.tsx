@@ -28,7 +28,8 @@ const CourseNav: FC<CourseNavProps> = ({ navItems }) => {
       if (element) {
         // Calculate sticky nav height (top-20 ~ 80px)
         const navElement = document.querySelector(".sticky");
-        const navHeight = navElement?.offsetHeight || 80; // Fallback to 80px
+        const navHeight =
+          navElement instanceof HTMLElement ? navElement.offsetHeight : 80;
         const elementPosition =
           element.getBoundingClientRect().top + window.scrollY;
 

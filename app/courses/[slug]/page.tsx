@@ -61,8 +61,8 @@ const Page = () => {
         if (element) {
           // Dynamically calculate nav height (sticky nav is top-20, ~80px)
           const navElement = document.querySelector(".sticky");
-          const navHeight = navElement?.offsetHeight || 80; // Fallback to 80px
-
+          const navHeight =
+            navElement instanceof HTMLElement ? navElement.offsetHeight : 80;
           // Calculate the target scroll position
           const elementPosition =
             element.getBoundingClientRect().top + window.scrollY;
