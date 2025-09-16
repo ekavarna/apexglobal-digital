@@ -59,7 +59,7 @@ const CourseCard = ({
 
         {/* Description */}
         <p
-          className={`mb-6 flex-grow ${
+          className={`mb-6 flex-grow line-clamp-5 ${
             isDisabled ? "text-gray-500" : "text-apex-text"
           }`}
         >
