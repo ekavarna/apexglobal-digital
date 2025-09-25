@@ -5,10 +5,13 @@ import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DOMPurify from "dompurify";
+import { useRouter } from "next/navigation";
 
 const HomePage: React.FC = () => {
+  const router = useRouter();
   const [showSignIn, setShowSignIn] = useState(true);
   const signUpFormRef = useRef<HTMLFormElement>(null);
+  const signInFormRef = useRef<HTMLFormElement>(null);
 
   const handleShowHideForm = () => {
     setShowSignIn(!showSignIn);
@@ -23,8 +26,8 @@ const HomePage: React.FC = () => {
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     const urlencoded = new URLSearchParams();
-    urlencoded.append("wstoken", "71f1ed04ab7cbda63c83a2635b9c76bd");
-    urlencoded.append("wsfunction", "auth_email_signup_user");
+    urlencoded.append("wstoken", "51c062fd9e4678d945fe10cf3c508073");
+    urlencoded.append("wsfunction", "local_resources_tenantlogin");
     urlencoded.append("username", newFormData.email as string);
     urlencoded.append("password", newFormData.password as string);
     urlencoded.append("email", newFormData.email as string);
@@ -34,7 +37,7 @@ const HomePage: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://lms.assist-ed.com/webservice/rest/server.php?moodlewsrestformat=json",
+        "/api/webservice/rest/server.php?moodlewsrestformat=json",
         {
           method: "POST",
           headers: myHeaders,
@@ -43,7 +46,8 @@ const HomePage: React.FC = () => {
         }
       );
       const result = await response.json(); // Parse response as JSON
-      if (result.success) {
+
+      if (result.status) {
         toast.success("Sign-up successful!", {
           position: "top-right",
           autoClose: 3000,
@@ -53,6 +57,13 @@ const HomePage: React.FC = () => {
           draggable: true,
           theme: "light",
         });
+
+        // Redirect after success
+        // const redirectUrl = result.redirect;
+
+        console.log(result);
+        //router.push(result);
+
         // Clear form fields
         if (signUpFormRef.current) {
           signUpFormRef.current.reset();
@@ -90,6 +101,83 @@ const HomePage: React.FC = () => {
     }
   };
 
+  const handleSignInSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const newFormData = Object.fromEntries(formData);
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    const urlencoded = new URLSearchParams();
+    urlencoded.append("username", newFormData.username as string);
+    urlencoded.append("password", newFormData.password as string);
+
+    try {
+      const response = await fetch("/api/login/tanentlogin.php", {
+        method: "POST",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow",
+      });
+      const result = await response.json(); // Parse response as JSON
+
+      if (!result.status) {
+        // Success: Show success toast and redirect
+        toast.success("Sign-in successful!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+
+        // Construct redirect URL with username and password
+        const redirectUrl = `https://digitallms.apexgloballearning.com/login/tanentlogin.php?username=${encodeURIComponent(
+          newFormData.username as string
+        )}&password=${encodeURIComponent(newFormData.password as string)}`;
+
+        // Redirect to the constructed URL
+        router.push(redirectUrl);
+
+        // Clear form fields
+        if (signInFormRef.current) {
+          signInFormRef.current.reset();
+        }
+      } else {
+        // Failure: Show error toast
+        const errorMessage =
+          result.warnings?.[0]?.message || "Sign-in failed. Please try again.";
+        const cleanMessage = DOMPurify.sanitize(errorMessage);
+        toast.error(
+          <div dangerouslySetInnerHTML={{ __html: cleanMessage }} />,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+          }
+        );
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred during sign-in. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+    }
+  };
+
   return (
     <div
       className="h-screen w-full bg-[#222431] bg-cover bg-center flex justify-center items-center"
@@ -114,19 +202,20 @@ const HomePage: React.FC = () => {
         >
           {showSignIn ? (
             <form
-              action="https://digitallms.apexgloballearning.com/login/index.php"
               method="post"
               id="signIn"
               className="space-y-4"
+              onSubmit={handleSignInSubmit}
+              ref={signInFormRef}
             >
               <div className="text-red-500" id="loginerrormessage"></div>
               <div>
-                <label htmlFor="email" className="font-semibold text-sm">
-                  Email
+                <label htmlFor="UserName" className="font-semibold text-sm">
+                  UserName
                 </label>
                 <input
                   type="text"
-                  placeholder="Enter Email"
+                  placeholder="Enter UserName"
                   name="username"
                   required
                   autoComplete="off"
@@ -157,7 +246,7 @@ const HomePage: React.FC = () => {
           ) : (
             <form
               id="signUp"
-              onSubmit={handleSignUpSubmit}
+              // onSubmit={handleSignUpSubmit}
               className="space-y-4"
               ref={signUpFormRef}
             >

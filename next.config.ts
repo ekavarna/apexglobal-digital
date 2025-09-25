@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   //output: 'export', // Enables static export
 
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://digitallms.apexgloballearning.com/:path*",
+      },
+    ];
+  },
+
   images: {
     remotePatterns: [
       {
