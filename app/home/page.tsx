@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
               method="post"
               id="signIn"
               className="space-y-4"
-              onSubmit={handleSignInSubmit}
+              action="https://digitallms.apexgloballearning.com/login/tanentlogin.php?"
               ref={signInFormRef}
             >
               <div className="text-red-500" id="loginerrormessage"></div>
