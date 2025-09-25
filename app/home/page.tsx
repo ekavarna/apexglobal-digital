@@ -1,17 +1,35 @@
 "use client";
-import { useState, FormEvent, useRef } from "react";
+import { useState, FormEvent, useRef, useEffect } from "react"; // Add useEffect
 import Image from "next/image";
 import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DOMPurify from "dompurify";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation"; // Add useSearchParams
 
 const HomePage: React.FC = () => {
   const router = useRouter();
+  const searchParams = useSearchParams(); // Hook to get query parameters
   const [showSignIn, setShowSignIn] = useState(true);
   const signUpFormRef = useRef<HTMLFormElement>(null);
   const signInFormRef = useRef<HTMLFormElement>(null);
+
+  // Extract and show toast for 'reason' parameter when component mounts
+  useEffect(() => {
+    const reason = searchParams.get("reason");
+    if (reason) {
+      const cleanMessage = DOMPurify.sanitize(reason);
+      toast.error(<div dangerouslySetInnerHTML={{ __html: cleanMessage }} />, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+    }
+  }, [searchParams]); // Run when searchParams changes
 
   const handleShowHideForm = () => {
     setShowSignIn(!showSignIn);
@@ -45,7 +63,7 @@ const HomePage: React.FC = () => {
           redirect: "follow",
         }
       );
-      const result = await response.json(); // Parse response as JSON
+      const result = await response.json();
 
       if (result.status) {
         toast.success("Sign-up successful!", {
@@ -58,21 +76,13 @@ const HomePage: React.FC = () => {
           theme: "light",
         });
 
-        // Redirect after success
-        // const redirectUrl = result.redirect;
-
         console.log(result);
-        //router.push(result);
-
-        // Clear form fields
         if (signUpFormRef.current) {
           signUpFormRef.current.reset();
         }
       } else {
         const errorMessage =
           result.warnings?.[0]?.message || "Sign-up failed. Please try again.";
-
-        // Sanitize the HTML to prevent XSS
         const cleanMessage = DOMPurify.sanitize(errorMessage);
         toast.error(
           <div dangerouslySetInnerHTML={{ __html: cleanMessage }} />,
@@ -120,10 +130,9 @@ const HomePage: React.FC = () => {
         body: urlencoded,
         redirect: "follow",
       });
-      const result = await response.json(); // Parse response as JSON
+      const result = await response.json();
 
       if (!result.status) {
-        // Success: Show success toast and redirect
         toast.success("Sign-in successful!", {
           position: "top-right",
           autoClose: 3000,
@@ -134,20 +143,16 @@ const HomePage: React.FC = () => {
           theme: "light",
         });
 
-        // Construct redirect URL with username and password
         const redirectUrl = `https://digitallms.apexgloballearning.com/login/tanentlogin.php?username=${encodeURIComponent(
           newFormData.username as string
         )}&password=${encodeURIComponent(newFormData.password as string)}`;
 
-        // Redirect to the constructed URL
         router.push(redirectUrl);
 
-        // Clear form fields
         if (signInFormRef.current) {
           signInFormRef.current.reset();
         }
       } else {
-        // Failure: Show error toast
         const errorMessage =
           result.warnings?.[0]?.message || "Sign-in failed. Please try again.";
         const cleanMessage = DOMPurify.sanitize(errorMessage);
@@ -246,7 +251,7 @@ const HomePage: React.FC = () => {
           ) : (
             <form
               id="signUp"
-              // onSubmit={handleSignUpSubmit}
+              onSubmit={handleSignUpSubmit}
               className="space-y-4"
               ref={signUpFormRef}
             >
