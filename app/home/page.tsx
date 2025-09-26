@@ -1,15 +1,17 @@
 "use client";
-import { useState, FormEvent, useRef, useEffect } from "react"; // Add useEffect
-import Image from "next/image";
+import { useState, FormEvent, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DOMPurify from "dompurify";
-import { useRouter, useSearchParams } from "next/navigation"; // Add useSearchParams
+import { useRouter, useSearchParams } from "next/navigation";
 
-const HomePage: React.FC = () => {
+// Force dynamic rendering to prevent prerendering errors
+export const dynamic = "force-dynamic";
+
+const Home: React.FC = () => {
   const router = useRouter();
-  const searchParams = useSearchParams(); // Hook to get query parameters
+  const searchParams = useSearchParams();
   const [showSignIn, setShowSignIn] = useState(true);
   const signUpFormRef = useRef<HTMLFormElement>(null);
   const signInFormRef = useRef<HTMLFormElement>(null);
@@ -18,7 +20,12 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const reason = searchParams.get("reason");
     if (reason) {
-      const cleanMessage = DOMPurify.sanitize(reason);
+      const errorMessages: { [key: string]: string } = {
+        invalid_credentials: "Invalid username or password",
+        // Add other mappings as needed
+      };
+      const displayMessage = errorMessages[reason] || reason;
+      const cleanMessage = DOMPurify.sanitize(displayMessage);
       toast.error(<div dangerouslySetInnerHTML={{ __html: cleanMessage }} />, {
         position: "top-right",
         autoClose: 5000,
@@ -29,7 +36,7 @@ const HomePage: React.FC = () => {
         theme: "light",
       });
     }
-  }, [searchParams]); // Run when searchParams changes
+  }, [searchParams]);
 
   const handleShowHideForm = () => {
     setShowSignIn(!showSignIn);
@@ -75,7 +82,6 @@ const HomePage: React.FC = () => {
           draggable: true,
           theme: "light",
         });
-
         console.log(result);
         if (signUpFormRef.current) {
           signUpFormRef.current.reset();
@@ -111,77 +117,77 @@ const HomePage: React.FC = () => {
     }
   };
 
-  const handleSignInSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const newFormData = Object.fromEntries(formData);
+  // const handleSignInSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.currentTarget);
+  //   const newFormData = Object.fromEntries(formData);
 
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+  //   const myHeaders = new Headers();
+  //   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-    const urlencoded = new URLSearchParams();
-    urlencoded.append("username", newFormData.username as string);
-    urlencoded.append("password", newFormData.password as string);
+  //   const urlencoded = new URLSearchParams();
+  //   urlencoded.append("username", newFormData.username as string);
+  //   urlencoded.append("password", newFormData.password as string);
 
-    try {
-      const response = await fetch("/api/login/tanentlogin.php", {
-        method: "POST",
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: "follow",
-      });
-      const result = await response.json();
+  //   try {
+  //     const response = await fetch("/api/login/tenantlogin.php", {
+  //       method: "POST",
+  //       headers: myHeaders,
+  //       body: urlencoded,
+  //       redirect: "follow",
+  //     });
+  //     const result = await response.json();
 
-      if (!result.status) {
-        toast.success("Sign-in successful!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "light",
-        });
+  //     if (!result.status) {
+  //       toast.success("Sign-in successful!", {
+  //         position: "top-right",
+  //         autoClose: 3000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         theme: "light",
+  //       });
 
-        const redirectUrl = `https://digitallms.apexgloballearning.com/login/tanentlogin.php?username=${encodeURIComponent(
-          newFormData.username as string
-        )}&password=${encodeURIComponent(newFormData.password as string)}`;
+  //       const redirectUrl = `https://digitallms.apexgloballearning.com/login/tenantlogin.php?username=${encodeURIComponent(
+  //         newFormData.username as string
+  //       )}&password=${encodeURIComponent(newFormData.password as string)}`;
 
-        router.push(redirectUrl);
+  //       router.push(redirectUrl);
 
-        if (signInFormRef.current) {
-          signInFormRef.current.reset();
-        }
-      } else {
-        const errorMessage =
-          result.warnings?.[0]?.message || "Sign-in failed. Please try again.";
-        const cleanMessage = DOMPurify.sanitize(errorMessage);
-        toast.error(
-          <div dangerouslySetInnerHTML={{ __html: cleanMessage }} />,
-          {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "light",
-          }
-        );
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error("An error occurred during sign-in. Please try again.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-      });
-    }
-  };
+  //       if (signInFormRef.current) {
+  //         signInFormRef.current.reset();
+  //       }
+  //     } else {
+  //       const errorMessage =
+  //         result.warnings?.[0]?.message || "Sign-in failed. Please try again.";
+  //       const cleanMessage = DOMPurify.sanitize(errorMessage);
+  //       toast.error(
+  //         <div dangerouslySetInnerHTML={{ __html: cleanMessage }} />,
+  //         {
+  //           position: "top-right",
+  //           autoClose: 5000,
+  //           hideProgressBar: false,
+  //           closeOnClick: true,
+  //           pauseOnHover: true,
+  //           draggable: true,
+  //           theme: "light",
+  //         }
+  //       );
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     toast.error("An error occurred during sign-in. Please try again.", {
+  //       position: "top-right",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       theme: "light",
+  //     });
+  //   }
+  // };
 
   return (
     <div
@@ -337,6 +343,14 @@ const HomePage: React.FC = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const HomePage: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
   );
 };
 
