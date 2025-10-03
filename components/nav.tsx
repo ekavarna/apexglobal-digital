@@ -14,6 +14,14 @@ const courses = [
     title: "Business Continuity Management Systems",
     href: "/courses/business-continuity-management-systems/",
   },
+  {
+    title: "Basic Occupational Safety and Health",
+    href: "/courses/basic-occupational-safety-and-health/",
+  },
+  {
+    title: "International Financial Reporting Standards",
+    href: "/courses/international-financial-reporting-standards/",
+  },
 ];
 
 // Define enterprise dropdown data

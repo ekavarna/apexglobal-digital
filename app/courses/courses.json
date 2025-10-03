@@ -197,5 +197,232 @@
         ]
       }
     ]
+  },
+  {
+    "courseName": "Basic Occupational Safety and Health",
+    "courseSubtitle": "",
+    "courseBannerImage": "/img/course/Basic-Occupational-Safety-and-Health-banner.png",
+    "navItems": [
+      {
+        "href": "#overview",
+        "label": "Overview"
+      },
+      {
+        "href": "#objectives",
+        "label": "Learning Objectives"
+      },
+      {
+        "href": "#attendees",
+        "label": "Who is it for?"
+      },
+      {
+        "href": "#modules",
+        "label": "Modules"
+      }
+    ],
+    "overview": {
+      "overviewTitle": "OVERVIEW ",
+      "overviewDescription": " This course introduces the fundamentals of Occupational Health and Safety (OHS), focusing on workplace laws, standards, and programs that ensure a safe and healthy environment. It equips learners with the skills to identify hazards, conduct risk assessments, and implement effective safety measures. The course also covers emergency preparedness and response, employees’ compensation protocols, and the roles of OSH personnel. Finally, it develops trainers’ capacity to communicate OHS concepts, deliver mandatory safety seminars, and foster a culture of safety through continuous training and engagement. </br></br> <strong> Basic Occupational Health and Safety 1</strong> offers a practical guide to building a safe and healthy workplace in line with Philippine laws and standards. Beginning with the foundations of OSH principles and mandatory programs, the course explores accident causation, unsafe acts and conditions, hazard identification, and risk assessment through HIRAC techniques. Learners will gain clarity on safety programs covering housekeeping, fire, machine, electrical, and chemical safety, as well as emergency preparedness, response protocols, and the Employees’ Compensation Program. By the end, participants will be ready to apply OSH principles, conduct risk assessments, implement safety measures, and contribute to a culture of compliance and worker protection.",
+      "overviewImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png"
+    },
+    "keyHighlights": [
+      "Clear introduction to OSH principles, Philippine laws, and global context.",
+      "Step-by-step guidance on hazard identification, risk assessment (HIRAC), and control measures.",
+      "Practical walkthrough of essential safety programs, including housekeeping, fire, machine, electrical, and chemical safety.",
+      "Exploration of workplace emergency preparedness, employee compensation protocols, and the role of OSH trainers in fostering a culture of safety."
+    ],
+    "dynamicContent": {
+      "title": "Learning Objectives ",
+      "subInfo": " ",
+      "list": [
+        "Understand the foundations, principles, and legal framework of Occupational Health and Safety. ",
+        "Learn the requirements of mandatory OSH programs and compliance with Philippine standards.",
+        "Gain practical skills to identify workplace hazards and conduct risk assessments using HIRAC.",
+        "Apply essential safety measures across material handling, machines, electricity, fire, and chemical management.",
+        "Enhance workplace safety, emergency preparedness, and employee well-being through effective OSH practices."
+      ]
+    },
+    "attendees": [
+      "Employees and workers across industries",
+      "Supervisors, managers, and team leaders",
+      "Safety officers and OSH committee members",
+      "Human resource and compliance officers",
+      "Contractors, subcontractors, and site personnel in high-risk activities ",
+      "Trainers, educators, and practitioners pursuing careers in occupational safety and health"
+    ],
+
+    "module": [
+      {
+        "moduleTitle": "Module-1 ",
+        "moduleSubtitle": "Introduction to Occupational Safety and Health",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+        "moduleInfo": "Introduction to Occupational Safety and Health",
+        "moduleList": [
+          "Importance of OSH",
+          "Mandatory OSH Program",
+          "Accident Causation and Prevention",
+          "Unsafe and Unhealthy Acts and Conditions",
+          "Overview of OSH Standards and Laws in the Philippines",
+          "Reportorial Requirements",
+          "Penalties for violations"
+        ]
+      },
+
+      {
+        "moduleTitle": "Module-2",
+        "moduleSubtitle": "Safety Programs: Essential Rules and Measure",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+        "moduleInfo": "Safety Programs: Essential Rules and Measure",
+        "moduleList": [
+          "Workplace good housekeeping (5S System)",
+          "Safety on Material Handling and Storage",
+          "Fire Safety",
+          "Machine Safety",
+          "Electrical Safety",
+          "Chemical Safety",
+          "Safety Data Sheet (SDS)",
+          "DOLE Department Order No. 136-14"
+        ]
+      },
+      {
+        "moduleTitle": "Module-3",
+        "moduleSubtitle": "Hazard Identification and Risk Assessment",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+        "moduleInfo": "Hazard Identification and Risk Assessment",
+        "moduleList": [
+          "Basic Concepts of Hazards and Risks",
+          "Types of Hazards",
+          "Methods for identifying Hazards",
+          "Hazards Identification, Risk Assessment and Control (HIRAC)",
+          "Risk assessment techniques"
+        ]
+      },
+      {
+        "moduleTitle": "Module-4",
+        "moduleSubtitle": "Workplace Emergency Preparedness",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+        "moduleInfo": "Workplace Emergency Preparedness",
+        "moduleList": [
+          "Roles of OSH personnel and other persons during emergencies",
+          "Responses during emergencies",
+          "Conduct of emergency drills ",
+          "Main functions of Employees’ Compensation Commission ",
+          "Purpose of ECP and employees covered of benefits ",
+          "Compensable diseases"
+        ]
+      },
+      {
+        "moduleTitle": "Module-5",
+        "moduleSubtitle": "Communicating OSH Training of Trainers on OSH",
+        "moduleImg": "/img/course/APEX-Global_course-cards_Basic-Occupational-Safety-and-Health.png",
+        "moduleInfo": "Communicating OSH Training of Trainers on OSH",
+        "moduleList": [
+          "Roles of OSH trainers",
+          "Basic skills of trainers",
+          "Presentation materials and delivery techniques",
+          "Mandatory OSH training for workers"
+        ]
+      }
+    ]
+  },
+  {
+    "courseName": "International Financial Reporting Standards",
+    "courseSubtitle": "",
+    "courseBannerImage": "/img/course/International-Financial-Reporting-Standards-Banner.png",
+    "navItems": [
+      {
+        "href": "#overview",
+        "label": "Overview"
+      },
+      {
+        "href": "#objectives",
+        "label": "Learning Objectives"
+      },
+      {
+        "href": "#attendees",
+        "label": "Who is it for?"
+      },
+      {
+        "href": "#modules",
+        "label": "Modules"
+      }
+    ],
+    "overview": {
+      "overviewTitle": "OVERVIEW ",
+      "overviewDescription": " This course introduces learners to the IFRS Sustainability Disclosure Standards—S1 (General Requirements) and S2 (Climate-related Disclosures). It provides the context, purpose, and practical application of these standards, equipping participants with the knowledge to align sustainability disclosures with global best practices and investor expectations. </br></br> <strong> IFRS S1 and S2 Fundamentals </strong> explores the global drivers of sustainability reporting, the role of the IFRS Foundation and ISSB, and how these standards establish a global baseline for disclosure. The course unpacks the core requirements of IFRS S1, the climate-specific disclosures of IFRS S2, and guides learners in transitioning from compliance to meaningful action. By the end of the course, participants will understand how IFRS S1 and S2 help organizations manage risks, build credibility, and integrate sustainability into financial reporting.",
+      "overviewImg": "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png"
+    },
+    "keyHighlights": [
+      "Clear introduction to IFRS S1 and S2, their scope, and purpose",
+      "Practical breakdown of core disclosure pillars (Governance, Strategy, Risk Management, Metrics & Targets)",
+      "Mapping S2 requirements to TCFD and SASB frameworks",
+      "Insights into jurisdictional adoption, compliance pathways, and alignment with GRI and ESRS",
+      "Guidance on conducting gap assessments and developing transition plans"
+    ],
+    "dynamicContent": {
+      "title": "Learning Objectives ",
+      "subInfo": " ",
+      "list": [
+        "Understand the global context behind IFRS sustainability standards and the ISSB’s role",
+        "Gain knowledge of IFRS S1 requirements and how they support comprehensive disclosures",
+        "Apply IFRS S2 climate-specific disclosures, including metrics, targets, and scenario analysis",
+        "Conduct a high-level gap assessment and propose steps to align organizational reporting with IFRS S1 and S2"
+      ]
+    },
+    "attendees": [
+      "Sustainability, Finance, and Compliance professionals preparing for IFRS adoption",
+      "Investor relations and corporate communications teams",
+      "Business leaders and managers responsible for ESG strategy and disclosures",
+      "Auditors and assurance providers supporting sustainability reporting",
+      "Educators, students, and professionals seeking expertise in IFRS-based reporting"
+    ],
+
+    "module": [
+      {
+        "moduleTitle": "Module-1 ",
+        "moduleSubtitle": "Introduction and Big Picture",
+        "moduleImg": "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png",
+        "moduleInfo": "Introduction and Big Picture",
+        "moduleList": [
+          "Context and Drivers",
+          "Concept of a Global Baseline ",
+          "Overview of IFRS S1 and IFRS S2"
+        ]
+      },
+
+      {
+        "moduleTitle": "Module-2",
+        "moduleSubtitle": "IFRS S1 - General Requirements",
+        "moduleImg": "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png",
+        "moduleInfo": "IFRS S1 - General Requirements",
+        "moduleList": [
+          "IFRS S1 Overview",
+          "Key Principles",
+          "Core Disclosure Pillars"
+        ]
+      },
+      {
+        "moduleTitle": "Module-3",
+        "moduleSubtitle": "IFRS S2 – Climate-related Disclosures",
+        "moduleImg": "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png",
+        "moduleInfo": "IFRS S2 – Climate-related Disclosures",
+        "moduleList": [
+          "IFRS S2 Overview",
+          "Climate Risk Assessment: Physical vs. transition risks",
+          "Scenario Analysis: What it is, why it matters, how it’s applied"
+        ]
+      },
+      {
+        "moduleTitle": "Module-4",
+        "moduleSubtitle": "Transitioning to IFRS Reporting",
+        "moduleImg": "/img/course/APEX-Global_course-cards_International-Financial-Reporting-Standards.png",
+        "moduleInfo": "Transitioning to IFRS Reporting",
+        "moduleList": [
+          "PFRS and Philippine SEC Requirements",
+          "Roadmap to Reporting Transition",
+          "Summary"
+        ]
+      }
+    ]
   }
 ]
